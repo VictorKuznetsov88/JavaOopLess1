@@ -27,7 +27,7 @@ public class Less1 {
             distance = rand.nextInt(5);
             isRoad = rand.nextBoolean();
             if (isRoad) {
-                barriers[i] = new runningTrack("Road " + i, distance);
+                barriers[i] = new RunningTrack("Road " + i, distance);
             } else {
                 barriers[i] = new Wall("Wall " + i, distance);
             }

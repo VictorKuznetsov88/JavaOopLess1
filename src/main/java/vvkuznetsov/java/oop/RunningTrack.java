@@ -1,9 +1,9 @@
 package vvkuznetsov.java.oop;
 
-public class runningTrack extends Barrier {
+public class RunningTrack extends Barrier {
     private int length;
 
-    public runningTrack(String name, int length) {
+    public RunningTrack(String name, int length) {
         super(name);
 
         this.length = length;
