@@ -1,9 +1,13 @@
 package ru.geekbrains.java.oop;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 
 public class Navigation extends PageFactory {
 
@@ -30,7 +34,11 @@ public class Navigation extends PageFactory {
     @FindBy(css = "[id=\"nav\"] [href=\"/courses\"]")
     private WebElement buttonCourses;
 
-    public WebElement getButton(String nameButton) {
+
+
+    @Step("При нажатии происходит переход на элемент: {nameButton}")
+    @Description("{nameButton}")
+        public WebElement getButton(String nameButton) {
 
         switch (nameButton) {
             case "Курсы": {

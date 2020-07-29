@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import ru.geekbrains.java.oop.Navigation;
+import io.qameta.allure.Step;
 
 public class ContentPage extends PageFactory {
 
@@ -31,27 +31,24 @@ public class ContentPage extends PageFactory {
         navigation = new Navigation(driver);
     }
 
+@Step("Проверка имя страницы: {expectedNamePage}")
+   public void checkNamePage(String expectedNamePage) {
+        Assertions.assertEquals(expectedNamePage, namePage.getText());
+    }
+
     public Navigation getNavigation() {
         return navigation;
     }
 
-    public void checkNamePage(String expectedNamePage) {
-        Assertions.assertEquals(expectedNamePage, namePage.getText());
-    }
-
     public WebElement getButtonClosePopUp1() {
-        return buttonClosePopUp1;
+       return buttonClosePopUp1;
     }
 
     public WebElement getButtonClosePopUp2() {
         return buttonClosePopUp2;
     }
 
-    public WebElement getHeader() {
-        return header;
-    }
+    public WebElement getHeader() { return header; }
 
-    public WebElement getFooter() {
-        return footer;
-    }
+    public WebElement getFooter() {return footer;}
 }

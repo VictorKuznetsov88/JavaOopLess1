@@ -4,14 +4,19 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import io.qameta.allure.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.geekbrains.java.oop.BaseWebTest;
 import ru.geekbrains.java.oop.AuthorizationPage;
 
+
+@Feature("Авторизация")
+@Story("Авторизация пользователя преподаватель")
 @DisplayName("Авторизация")
 public class AuthorizationWebTest extends BaseWebTest {
 
     @DisplayName("Успешная авторизация")
+    @Description("Проверяем доступ пользователя Преподаватель, проверка страницы Главная, Нажать в навигации \"Курсы\", Нажать в шапке сайта курсы, Быбрать чекбоксы Бесплатно и Тестирование, Проверка выбора")
     @Test
     public void auth() {
         driver.get("https://geekbrains.ru/");

@@ -1,6 +1,7 @@
 package ru.geekbrains.java.oop;
 
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -12,7 +13,9 @@ import ru.geekbrains.java.oop.ContentPage;
 
 import java.util.stream.Stream;
 
-@DisplayName("Навигация по страницам")
+@Feature("Навигация по сайту")
+@Story("Переход по страницам Блог, Форум, Вебинары, Тесты, Карьера, Курсы ")
+@DisplayName("Навигация по сайту")
 public class NavigationWebTest extends BaseWebTest {
 
 //    Перейти на сайт https://geekbrains.ru/events
@@ -44,19 +47,19 @@ public class NavigationWebTest extends BaseWebTest {
     }
 
     @DisplayName("Блог")
+    @Description("Нажатие на элемент навигации")
     @Test
     public void posts() {
         String namePage="Блог";
         ContentPage contentPage = new ContentPage(driver);
-
         contentPage.getNavigation().getButton(namePage).click();
         contentPage.getButtonClosePopUp1().click();
         contentPage.getButtonClosePopUp2().click();
 
         contentPage.checkNamePage(namePage);
     }
-
     @DisplayName("Нажатие на элемент навигации")
+    @Description("Нажатие на элемент навигации")
     @ParameterizedTest
     @MethodSource("dataProvider")
     public void courses(String namePage) {

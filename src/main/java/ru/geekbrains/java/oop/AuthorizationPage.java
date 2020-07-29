@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import io.qameta.allure.Step;
+import lombok.ToString;
 
 public class AuthorizationPage {
 
@@ -26,6 +28,7 @@ public class AuthorizationPage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Авторизация пользователем c логин: {login} пароль: {password}")
     public ContentPage authorization(String login, String password) {
         inputLogin.sendKeys(login);
         inputPassword.sendKeys(password);

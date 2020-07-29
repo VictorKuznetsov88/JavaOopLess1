@@ -25,12 +25,12 @@ public abstract class BaseWebTest {
         options.addArguments("--disable-popup-blocking");
         options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(40, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        wait15second = new WebDriverWait(driver, 65);
+        wait15second = new WebDriverWait(driver, 45);
     }
 
 

@@ -1,5 +1,9 @@
 package ru.geekbrains.java.oop;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,7 +15,9 @@ import ru.geekbrains.java.oop.BaseWebTest;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-@DisplayName("Поиск")
+@Feature("Поиск по странице")
+@Story("Поиск, поиск элементов на странице ")
+@DisplayName("Поиск по странице")
 public class SearchWebTest extends BaseWebTest {
 
 //    Перейти на сайт https://geekbrains.ru/events
@@ -31,7 +37,8 @@ public class SearchWebTest extends BaseWebTest {
         driver.get("https://geekbrains.ru/events");
     }
 
-    @DisplayName("Проверка поиска по всем блокам")
+    @DisplayName("Проверка поиска по блокам")
+    @Description("Поиск, поиск элементов на странице")
     @Test
     void search() {
         WebElement buttonSearch = driver.findElement(By.cssSelector("[class=\"show-search-form\"] [class=\"svg-icon icon-search \"]"));
